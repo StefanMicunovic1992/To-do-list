@@ -3,11 +3,19 @@ const model = (function () {
 
     class ToDoItem {
         constructor(toDoText) {
-            let globalId = items.length + 1;
+            let globalId ;
+            if(items.length == 0){
+                globalId = items.length+1
+                console.log(globalId);
+            }else if(items.length > 0){
+                globalId = (items[items.length-1].id)+1;
+                console.log(globalId);
+            }
             console.log(globalId);
             this.toDoText = toDoText;
             this.id = globalId;
             this.done = false;
+            console.log(this.id);
             globalId++;
         }
 
