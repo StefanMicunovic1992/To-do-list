@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+input[type=checkbox]:checked+span.precrtano {
+    text-decoration: line-through
+}
+
+h1 {
+    font-family: Monospace, Verdana, Sans-serif;
+    font-size: 60px;
+    margin: auto;
+    margin-top: 100px;
+    text-align: left
+}
+
+ul {
+    list-style: none
+}
+
+p {
+    margin: auto;
+    margin-top: 60px;
+    text-align: left
+}
+
+button {
+    border-radius: 10px;
+    border-color: red;
+    font-family: Monospace, Verdana, Sans-serif;
+    font-size: 18px;
+    text-align: left;
+    margin: auto;
+    padding: 5px 10px;
+
+}
+
+input {
+    border-color: #000;
+    border-style: solid;
+    font-family: Monospace, Verdana, Sans-serif;
+    font-size: 20px;
+    margin: auto
+}
+
+span {
+    font-family: Monospace, Verdana, Sans-serif;
+    font-size: 20px;
+    margin-left: 10px;
+    text-align: left;
+    cursor: pointer;
+}
+
+ul {
+    font-family: Monospace, Verdana, Sans-serif;
+    font-size: 20px;
+    margin: auto;
+    margin-top: 18px;
+    margin-left: 5px;
+    text-align: left;
+    list-style-position: inside
+}
+
+div {
+    margin: auto;
+    width: 60%
+}
+.checked{
+    text-decoration: line-through;
+    text-decoration-color: red;
+}
+.changeTask{
+    position: absolute;
+    top: 0;
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    width: 100%;
+    height: 100vh;
+}
+.change, .noChange {
+    padding: 10px 20px;
+}
+#filter{
+    padding: 5px 5px;
+    margin-left: 20px;
+    border: 2px solid black;
+}
