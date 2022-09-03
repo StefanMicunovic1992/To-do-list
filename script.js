@@ -6,16 +6,12 @@ const model = (function () {
             let globalId ;
             if(items.length == 0){
                 globalId = items.length+1
-                console.log(globalId);
             }else if(items.length > 0){
                 globalId = (items[items.length-1].id)+1;
-                console.log(globalId);
             }
-            console.log(globalId);
             this.toDoText = toDoText;
             this.id = globalId;
             this.done = false;
-            console.log(this.id);
             globalId++;
         }
 
@@ -77,7 +73,6 @@ const model = (function () {
         completionCheck: function (nextElement, oneCheckbox) {
             items.forEach(elem => {
                 if (elem.id == oneCheckbox.getAttribute('id')) {
-                    console.log(elem);
                     if (nextElement.getAttribute("class") !== "") {
                         elem.done = true;
                     } else {
@@ -101,7 +96,6 @@ const model = (function () {
         },
         setCookies: function () {
             let toSent = JSON.stringify(items)
-            console.log(toSent);
             document.cookie = `allItems=${toSent}; expires=${new Date(new Date().getTime()+1000*60*60*24*365).toGMTString()}`;
             alert(`Successfully saved`)
         },
@@ -172,11 +166,11 @@ const view = (function () {
             console.log(`funkcija`);
             let nextElement = oneCheckbox.nextElementSibling;
             if (oneCheckbox.checked) {
-                console.log(`ulazi`);
+                
                 nextElement.classList.add("checked");
 
             } else {
-                console.log(`ne ulazi`);
+               
                 nextElement.classList.remove("checked");
 
             }
@@ -328,7 +322,7 @@ const controler = (function (model, view) {
     }
     let myCookie = document.cookie.match('(^|;)\\s*' + 'allItems' + '\\s*=\\s*([^;]+)')?.pop() || ''
         if(myCookie.length > 0) {
-            console.log(myCookie);
+            
             myCookie = JSON.parse(myCookie)
             myCookie.forEach(elem=>{
                 model.pushToArrayFromCookie(elem);
